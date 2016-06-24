@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="sampleData" ng-strict-di>
+
+<head>
+    <meta charset="utf-8">
+    <title>sampleData</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body ng-cloak>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div layout="vertical" layout-fill ng-controller="MainController as vm">
+        <md-content style="width:100%;">
+            <header>
+                <acme-navbar creation-date="vm.creationDate"></acme-navbar>
+            </header>
+            <section class="jumbotron">
+                <h1>'Allo, 'Allo!</h1>
+                <p class="lead">
+                    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+                    <br> Always a pleasure scaffolding your apps.
+                </p>
+                <md-button class="md-raised animated infinite" ng-class="vm.classAnimation" ng-click="vm.showToastr()">Splendid Toastr</md-button>
+                <p>
+                    With ♥ thanks to the contributions of
+                    <acme-malarkey extra-values=""></acme-malarkey>
+                </p>
+            </section>
+            <div class="techs" layout-align="center">
+                <md-card>
+                    <md-card-content>
+                        <h4>Tyler 
+                              {{vm.financeData.timeseries}}
+                        </h4>
+                </md-card>
+            </div>
+            <time-series time-series-data="vm.financeData.beta">
+            </time-series>
+        </md-content>
+    </div>
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp/serve,.tmp/partials}) scripts/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+
+</html>
